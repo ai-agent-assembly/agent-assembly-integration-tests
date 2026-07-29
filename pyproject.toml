@@ -54,7 +54,7 @@ grpc = ["grpcio>=1.83.0", "grpcio-tools>=1.60"]
 # version available. The crewai smoke is disabled until chromadb ships a fix.
 frameworks = [
     "langchain>=1.3.14",
-    "langgraph>=1.2.9",
+    "langgraph>=1.2.10",
     # Pinned to >=1.102.0 to fix GHSA-cg7w-rg45-pc59 (SSRF bypass via DNS rebinding)
     # and GHSA-cqp8-fcvh-x7r3 (SSRF bypass via URL encoding). Prior floor (0.0.14)
     # was vulnerable; floor now raised to the resolved 2.x line — the smokes are
