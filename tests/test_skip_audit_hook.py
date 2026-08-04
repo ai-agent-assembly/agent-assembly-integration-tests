@@ -11,7 +11,9 @@ from pathlib import Path
 
 import pytest
 
-pytest_plugins = ["pytester"]
+# ``pytest_plugins = ["pytester"]`` lives in ``tests/conftest.py`` (the root
+# conftest) rather than here — pytest requires plugin registration from a root
+# conftest, not a non-root test module.
 
 _CONFTEST = Path(__file__).parent / "public" / "conftest.py"
 

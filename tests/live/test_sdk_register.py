@@ -107,7 +107,8 @@ def test_version_skew_preflight_before_live_register(
     # a hard failure, so reaching the assert means a well-formed version came
     # back off aa-api-server rather than the guard silently skipping.
     gateway_version = fetch_gateway_version(live_api_server.health_url)
-    assert isinstance(gateway_version, str) and gateway_version
+    assert isinstance(gateway_version, str)
+    assert gateway_version
 
     # Exercise the skew guard, tolerating the legitimate independent-versioning
     # skew documented above rather than asserting package == core equality.

@@ -199,7 +199,8 @@ def test_unsupported_cases_carry_a_reason(case: InstallCase) -> None:
     assert case.unsupported_reason.strip(), (
         f"{case.id} is unsupported but carries no reason"
     )
-    assert not case.install_argv and not case.verify_argv
+    assert not case.install_argv
+    assert not case.verify_argv
 
 
 def test_ac3_registry_release_paths_cover_all_ecosystems() -> None:
@@ -223,7 +224,8 @@ def test_isolated_install_dir_is_fresh_and_separate(tmp_path: Path) -> None:
     """The tempdir helper yields a fresh, empty, per-case directory."""
     a = isolated_install_dir(tmp_path, "aasm-source-branch")
     b = isolated_install_dir(tmp_path, "python-sdk-pypi")
-    assert a.is_dir() and not any(a.iterdir())
+    assert a.is_dir()
+    assert not any(a.iterdir())
     assert a != b
     (a / "marker").write_text("x")
     # A second case's dir is unaffected by the first.

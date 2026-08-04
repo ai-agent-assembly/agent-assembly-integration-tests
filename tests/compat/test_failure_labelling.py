@@ -49,7 +49,10 @@ def test_failure_message_points_at_pair(entry: CompatEntry) -> None:
     assert entry.runtime_version in message, (
         f"[{COMPONENT}] failure message must name the runtime version; got {message!r}"
     )
-    assert entry.sdk in message and entry.sdk_version in message, (
-        f"[{COMPONENT}] failure message must name the SDK + version; got {message!r}"
+    assert entry.sdk in message, (
+        f"[{COMPONENT}] failure message must name the SDK; got {message!r}"
+    )
+    assert entry.sdk_version in message, (
+        f"[{COMPONENT}] failure message must name the SDK version; got {message!r}"
     )
     assert "handshake rejected" in message

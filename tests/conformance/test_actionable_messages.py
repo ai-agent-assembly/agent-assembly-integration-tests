@@ -55,7 +55,10 @@ def test_policy_rejection_carries_stable_actionable_code() -> None:
         f"{exc_info.value.code!r}"
     )
     # The code is non-empty and human-readable (kebab-cased), not an opaque number.
-    assert exc_info.value.code and "-" in exc_info.value.code, (
+    assert exc_info.value.code, (
+        f"[{COMPONENT}] rejection code {exc_info.value.code!r} is not actionable"
+    )
+    assert "-" in exc_info.value.code, (
         f"[{COMPONENT}] rejection code {exc_info.value.code!r} is not actionable"
     )
 
@@ -71,6 +74,9 @@ def test_payload_violation_message_names_field() -> None:
         f"[{COMPONENT}] expected the violation to name the 'decision' field, got {violation!r}"
     )
     # The violation string is field-qualified so an operator can act on it.
-    assert violation is not None and ":" in violation, (
+    assert violation is not None, (
+        f"[{COMPONENT}] payload violation {violation!r} must be field-qualified"
+    )
+    assert ":" in violation, (
         f"[{COMPONENT}] payload violation {violation!r} must be field-qualified"
     )
