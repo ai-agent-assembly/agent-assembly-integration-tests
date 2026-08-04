@@ -12,6 +12,11 @@ from __future__ import annotations
 
 import pytest
 
+# The ``pytester`` fixture (used by ``test_skip_audit_hook.py``) is provided by
+# the built-in ``pytester`` plugin, which must be registered from a root
+# conftest — not a non-root test module (pytest disallows the latter).
+pytest_plugins = ["pytester"]
+
 
 def pytest_collection_modifyitems(
     config: pytest.Config, items: list[pytest.Item]
