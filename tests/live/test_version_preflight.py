@@ -62,7 +62,8 @@ def test_skew_raises_with_actionable_message() -> None:
     with pytest.raises(VersionSkewError) as exc:
         assert_binding_matches_gateway("0.0.2", "0.0.1")
     message = str(exc.value)
-    assert "0.0.2" in message and "0.0.1" in message
+    assert "0.0.2" in message
+    assert "0.0.1" in message
     # The whole point of AAASM-4669: surface the skew and the fix, and name the
     # cryptic error it would otherwise masquerade as.
     assert "rebuild" in message.lower()

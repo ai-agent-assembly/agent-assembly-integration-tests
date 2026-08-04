@@ -220,7 +220,10 @@ def _node_enforcement_modes() -> frozenset[str]:
         )
 
     modes = json.loads(result.stdout)
-    assert isinstance(modes, list) and modes, (
+    assert isinstance(modes, list), (
+        f"[node-sdk] ENFORCEMENT_MODES did not resolve to a non-empty array: {modes!r}"
+    )
+    assert modes, (
         f"[node-sdk] ENFORCEMENT_MODES did not resolve to a non-empty array: {modes!r}"
     )
     return frozenset(modes)

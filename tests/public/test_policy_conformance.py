@@ -49,7 +49,10 @@ def test_allow_deny_fixture_well_formed() -> None:
         assert key in doc, (
             f"[{COMPONENT}] Missing required key {key!r} in allow-deny-basic.yaml"
         )
-    assert isinstance(doc["rules"], list) and len(doc["rules"]) >= 1, (
+    assert isinstance(doc["rules"], list), (
+        f"[{COMPONENT}] Expected 'rules' to be a list in allow-deny-basic.yaml"
+    )
+    assert len(doc["rules"]) >= 1, (
         f"[{COMPONENT}] Expected at least one rule in allow-deny-basic.yaml"
     )
     effects = {r.get("effect") for r in doc["rules"]}

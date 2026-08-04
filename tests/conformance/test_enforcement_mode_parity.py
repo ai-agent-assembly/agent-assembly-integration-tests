@@ -71,9 +71,11 @@ def test_sdk_mode_sets_are_pairwise_identical() -> None:
 def test_decision_enum_aligns_with_modes() -> None:
     """The decision enum's 'observe' outcome aligns with the 'observe' enforcement mode."""
     decisions = set(_DATA["canonical_decisions"])
-    assert "observe" in _CANONICAL and "observe" in decisions, (
-        f"[{COMPONENT}] 'observe' must appear in both modes {_CANONICAL} and "
-        f"decisions {sorted(decisions)}"
+    assert "observe" in _CANONICAL, (
+        f"[{COMPONENT}] 'observe' must appear in modes {_CANONICAL}"
+    )
+    assert "observe" in decisions, (
+        f"[{COMPONENT}] 'observe' must appear in decisions {sorted(decisions)}"
     )
     assert {"allow", "deny"} <= decisions, (
         f"[{COMPONENT}] decision enum missing allow/deny: {sorted(decisions)}"

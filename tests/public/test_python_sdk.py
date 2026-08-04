@@ -49,7 +49,10 @@ def test_python_sdk_version_string() -> None:
     import agent_assembly
 
     version = agent_assembly.__version__
-    assert isinstance(version, str) and version, (
+    assert isinstance(version, str), (
+        f"[{COMPONENT}] Expected version to be a string, got {version!r}"
+    )
+    assert version, (
         f"[{COMPONENT}] Expected non-empty version string, got {version!r}"
     )
 
@@ -76,7 +79,10 @@ def test_python_sdk_native_binding_loads() -> None:
     core = _require_native_module()
 
     origin = getattr(core, "__file__", None)
-    assert origin is not None and origin.endswith((".so", ".pyd", ".dylib")), (
+    assert origin is not None, (
+        f"[{COMPONENT}] {NATIVE_MODULE} did not load from a compiled extension; __file__={origin!r}"
+    )
+    assert origin.endswith((".so", ".pyd", ".dylib")), (
         f"[{COMPONENT}] {NATIVE_MODULE} did not load from a compiled extension; __file__={origin!r}"
     )
 
@@ -107,7 +113,11 @@ def test_python_sdk_native_binding_required() -> None:
     )
     core = importlib.import_module(NATIVE_MODULE)
     origin = getattr(core, "__file__", None)
-    assert origin is not None and origin.endswith((".so", ".pyd", ".dylib")), (
+    assert origin is not None, (
+        f"[{COMPONENT}] {NATIVE_MODULE} did not load from a compiled extension; "
+        f"__file__={origin!r}"
+    )
+    assert origin.endswith((".so", ".pyd", ".dylib")), (
         f"[{COMPONENT}] {NATIVE_MODULE} did not load from a compiled extension; "
         f"__file__={origin!r}"
     )
@@ -128,7 +138,10 @@ def test_python_sdk_functional_install() -> None:
     )
 
     error_cls = agent_assembly.AssemblyError
-    assert isinstance(error_cls, type) and issubclass(error_cls, Exception), (
+    assert isinstance(error_cls, type), (
+        f"[{COMPONENT}] AssemblyError is not an exception class: {error_cls!r}"
+    )
+    assert issubclass(error_cls, Exception), (
         f"[{COMPONENT}] AssemblyError is not an exception class: {error_cls!r}"
     )
 

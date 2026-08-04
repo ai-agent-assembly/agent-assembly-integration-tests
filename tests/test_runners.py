@@ -52,7 +52,9 @@ def test_marker_area_runs_pytest() -> None:
     code = runners.run_area(_refs(), "sdk", json_report=report, _runner=rec)
     assert code == 0
     cmd, env = rec.calls[0]
-    assert "pytest" in cmd and "-m" in cmd and "sdk" in cmd
+    assert "pytest" in cmd
+    assert "-m" in cmd
+    assert "sdk" in cmd
     assert f"--json-report-file={report}" in cmd
     assert env["AASM_INSTALL_MODE"] == "source"
 
@@ -61,7 +63,8 @@ def test_install_area_runs_smoke_script() -> None:
     rec = _Recorder()
     runners.run_area(_refs(), "install", _runner=rec)
     cmd, _ = rec.calls[0]
-    assert cmd[0] == "bash" and cmd[1].endswith("smoke-test-rust-build.sh")
+    assert cmd[0] == "bash"
+    assert cmd[1].endswith("smoke-test-rust-build.sh")
 
 
 def test_release_mode_runs_release_marker_with_version() -> None:
