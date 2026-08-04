@@ -17,7 +17,7 @@ dependencies = []
 # Chromium. Not a default dependency — a plain `uv sync` stays browser-free and
 # the smoke skip-guards on its absence (AAASM-3146). After installing, run
 # `playwright install chromium` to fetch the browser binary.
-browser = ["playwright>=1.61.0"]
+browser = ["playwright>=1.62.0"]
 
 # Opt-in extra for the live verdict-table conformance variant (AAASM-3742):
 # installs grpcio + grpcio-tools so `tests/conformance/test_verdict_table_live.py`
