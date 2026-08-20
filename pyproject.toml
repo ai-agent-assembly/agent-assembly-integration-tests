@@ -61,7 +61,7 @@ frameworks = [
     # unaffected by the API changes across the 1.x -> 2.x transition.
     "pydantic-ai>=2.27.1",
     # crewai removed: GHSA-f4j7-r4q5-qw2c (chromadb CRITICAL vuln, no patch)
-    "google-adk>=2.6.3",
+    "google-adk>=2.7.0",
     # LlamaIndex governance smoke (AAASM-3536): the adapter patches the concrete
     # FunctionTool.call / acall hooks. Floor reflects the resolved 0.14.x line —
     # older 0.10+ lines are believed to still work but are untested here.
@@ -95,7 +95,7 @@ dev = [
     "pytest>=9.1.1",
     "pytest-json-report>=1.5",
     "pytest-xdist>=3.8.0",
-    "ruff>=0.16.2",
+    "ruff>=0.16.3",
 ]
 
 [tool.pytest.ini_options]
