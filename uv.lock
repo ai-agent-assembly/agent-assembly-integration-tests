@@ -103,14 +103,14 @@ wheels = [
 
 [[package]]
 name = "agent-framework"
-version = "1.14.0"
+version = "1.15.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "agent-framework-core", extra = ["all"] },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/75/d1/7fef4eb69f8bb966953a5b2249aa6377650887d1dabe48aa9c808a4e1c90/agent_framework-1.14.0.tar.gz", hash = "sha256:41399f4340a10e21792b46acf30f91bc74e06a975bc0965d343886a2caf6c1ac", size = 6015477, upload-time = "2026-08-14T02:39:24.713Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/54/a4/f8b6b95b880ad86cfa1f565649e93c39082e9a6ca2bb9b1b1aa299733792/agent_framework-1.15.0.tar.gz", hash = "sha256:6e330f15fc544466220af440cd0965b3fc37c717f4055cbc017f5955019e589a", size = 9907, upload-time = "2026-08-21T23:22:44.011Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/15/67/a01b1566342263d3d6e520cae4853ff0731805d22eb334f3f9a55f76f41e/agent_framework-1.14.0-py3-none-any.whl", hash = "sha256:32d94895290c3acfed7f8fe1bbb5f1ecb079c1cd08da0ea8d9946795fe3d1bd6", size = 5691, upload-time = "2026-08-14T02:39:00.12Z" },
+    { url = "https://files.pythonhosted.org/packages/03/cb/7f568d4cf0ea014a7909c9f1bec57856566e240406c28fed40998c513084/agent_framework-1.15.0-py3-none-any.whl", hash = "sha256:57cdadff41946c979f9dce8d11553698f4c7c363c19835bc75e17457f7aeca84", size = 5706, upload-time = "2026-08-21T23:22:28.611Z" },
 ]
 
 [[package]]
@@ -267,7 +267,7 @@ wheels = [
 
 [[package]]
 name = "agent-framework-core"
-version = "1.14.0"
+version = "1.15.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "msgspec" },
@@ -276,9 +276,9 @@ dependencies = [
     { name = "python-dotenv" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c8/15/ffdf3450fcf6f7f623463b60abddf498a3c85e8724eb168aa8584325f8db/agent_framework_core-1.14.0.tar.gz", hash = "sha256:e8c3abdae48df50ce9aa26818f7b3c9f3170672ce607eb73a69b6413fbb753b3", size = 563625, upload-time = "2026-08-14T02:39:31.548Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/01/fa/0dd640aa300790d2eadc6e7d96cdb3906ee19986e29f78e1f2658601e57e/agent_framework_core-1.15.0.tar.gz", hash = "sha256:b6e0f1f0c3f59eec0f1cdd594e3892471a4471593ce48c413f01e2c7bd9d77be", size = 578517, upload-time = "2026-08-21T23:22:48.05Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/9a/cc/f392fcca95f3f51e8ae95b8060d36b95355d24cd647a49f4f239cef95732/agent_framework_core-1.14.0-py3-none-any.whl", hash = "sha256:0d161490bb26bde185dd325fcdbb3b109d85e91076ef6ed5df118c4e5f715cba", size = 620760, upload-time = "2026-08-14T02:39:08.763Z" },
+    { url = "https://files.pythonhosted.org/packages/31/ea/38fc231485bc0545b74256bb464523d4c112533e6986cb490b2459dea3cc/agent_framework_core-1.15.0-py3-none-any.whl", hash = "sha256:393e1404a0b4344ee8c18bb435f5ce850ed223063fa1184becbeac99b0652007", size = 635762, upload-time = "2026-08-21T23:22:33.8Z" },
 ]
 
 [package.optional-dependencies]
