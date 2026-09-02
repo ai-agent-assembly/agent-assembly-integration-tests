@@ -27,6 +27,23 @@ updates:
       - dependency-name: "json-repair"
       - dependency-name: "mcp"
 
+  # The two live Go driver modules (AAASM-6023). Without this block GitHub
+  # still raised *alerts* for them — the dependency graph indexes any go.mod it
+  # finds — but opened no PRs, because security updates need a declared
+  # ecosystem. They had therefore never received a single automated update, and
+  # their recorded indirect versions drifted until they no longer resolved
+  # against the go-sdk `replace` target at all.
+  - package-ecosystem: "gomod"
+    directories:
+      - "/tests/live/drivers/go"
+      - "/tests/live/drivers/go/framework"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "go"
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
